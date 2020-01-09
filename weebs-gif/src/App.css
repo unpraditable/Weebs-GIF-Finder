@@ -4,6 +4,11 @@
   color: white;
 }
 
+body{
+  background-color: #282c34;
+  color: white;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -29,9 +34,16 @@
   color: #61dafb;
 }
 
-.gif-item{
+.gif-container { /* Masonry container */
+  column-count: 5;  
+  width: 90vw;
+
+}
+
+.gif-item { /* Masonry bricks or child elements */
   display: inline-block;
-  width: 25%;
+  margin: 0 0 1em;
+  width: 100%;
 }
 
 @keyframes App-logo-spin {
