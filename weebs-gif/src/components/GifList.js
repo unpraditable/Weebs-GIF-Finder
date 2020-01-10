@@ -22,7 +22,7 @@ class GifList extends Component {
         });
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.loadGifs();
     }
 
@@ -39,20 +39,28 @@ class GifList extends Component {
             }
         )
         .then(res => {
-            const gifs = res.data.data;
-            this.setState({ gifs });
+            this.setState({ 
+                gifs : res.data.data 
+            });
         })
     }
 
-    loadMore = () => {
-        this.setState(
-          prevState => ({
-            offset: prevState.offset + 25
-          }),
-          this.loadGifs
-        );
-        console.log(this.state.offset);
-      };
+    loadMore =() =>{
+        this.setState({
+            offset: this.state.offset + 25 
+        });
+        this.loadGifs()
+    }
+
+    // loadMore = () => {
+    //     this.setState(
+    //         prevState => ({
+    //             offset: prevState.offset + 25
+    //         }),
+    //         this.loadGifs
+    //     );
+    //     console.log(this.state.offset);
+    // };
 
     render () {
         return (
@@ -77,7 +85,10 @@ class GifList extends Component {
                 <div className="App-body gif-container">
                 {
                     this.state.gifs.map(gif =>
-                        <img src={gif.images.fixed_height_downsampled.url} className="gif-item" />
+                        <div className="gif-wrapper">
+                            <img src={gif.images.fixed_height_downsampled.url} className="gif-item" />
+                            {/* <h3>{gif.type}</h3> */}
+                        </div>
                     )
                 }
                 
