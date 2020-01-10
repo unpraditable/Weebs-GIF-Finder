@@ -20,6 +20,20 @@ body{
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .App{
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .App{
+    width: 992px;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   display: flex;
@@ -35,9 +49,7 @@ body{
 }
 
 .gif-container { /* Masonry container */
-  column-count: 5;  
-  width: 90vw;
-
+  column-count: 4;  
 }
 
 .gif-item { /* Masonry bricks or child elements */
@@ -53,4 +65,14 @@ body{
   to {
     transform: rotate(360deg);
   }
+}
+
+button{
+  border: 2px solid springgreen;
+  color: springgreen;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 20px;
+  width: 300px;
 }
