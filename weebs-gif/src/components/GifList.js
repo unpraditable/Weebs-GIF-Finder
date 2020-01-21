@@ -40,7 +40,7 @@ class GifList extends Component {
         )
         .then(res => {
             this.setState({ 
-                gifs : res.data.data 
+                gifs : [...this.state.gifs, ...res.data.data],
             });
         })
     }
