@@ -7,12 +7,9 @@ let apiKey='vKqSG6OikZdmluPjBXQnHfmOQYJAoaOE';
 let limit = '25';
 let rating = 'G';
 
-const vowels = ["a", "i", "u", "e", "o"];
-const capitalVowels = ["A", "I", "U", "E", "O"];
 
 
-
-class GifList extends Component {
+class GifListPagination extends Component {
     state = {
         gifs: [],
         autoPlay : "0",
@@ -25,7 +22,7 @@ class GifList extends Component {
         });
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.loadGifs();
     }
 
@@ -53,19 +50,6 @@ class GifList extends Component {
             offset: this.state.offset + 25 
         });
         this.loadGifs()
-    }
-
-    mockingString = (string) => {
-        for (let i = 0; i < string.length; i++) {
-            if (vowels.includes(string[i])) {
-                string[i] = "i"
-            }
-
-            if(capitalVowels.includes(string[i])) {
-                string[i] = "I";
-            }
-        }
-        alert(string);
     }
 
     // loadMore = () => {
@@ -111,7 +95,7 @@ class GifList extends Component {
                 
                 </div>
                 <div>
-                    <button type="button" onClick={() => this.mockingString("Orang Jahat Adalah Orang Baik yang Disakiti")}>
+                    <button type="button" onClick={this.loadMore}>
                         See more
                     </button>
                 </div>
@@ -121,4 +105,4 @@ class GifList extends Component {
     }
 }
 
-export default GifList; 
+export default GifListPagination; 
