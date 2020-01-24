@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AnimeList from './components/AnimeList';
+import MockingString from './components/MockingString';
 import GifList from './components/GifList';
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         
       </header>
-      <GifList />
+      <MockingString />
     </div>
   );
 }

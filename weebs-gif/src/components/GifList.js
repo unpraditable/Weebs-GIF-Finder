@@ -7,8 +7,7 @@ let apiKey='vKqSG6OikZdmluPjBXQnHfmOQYJAoaOE';
 let limit = '25';
 let rating = 'G';
 
-const vowels = ["a", "i", "u", "e", "o"];
-const capitalVowels = ["A", "I", "U", "E", "O"];
+
 
 
 
@@ -53,24 +52,6 @@ class GifList extends Component {
             offset: this.state.offset + 25 
         });
         this.loadGifs()
-    }
-
-    mockingString = (string) => {
-        let newString = ""
-        for (let i = 0; i < string.length; i++) {
-            if(!vowels.includes(string[i]) && !capitalVowels.includes(string[i])) {
-                newString = newString.concat(string[i]);
-
-            }
-
-            if (vowels.includes(string[i])) {
-                newString = newString.concat("i");
-            }
-            if(capitalVowels.includes(string[i])) {
-                newString = newString.concat("I");
-            }
-        }
-        alert(newString);
     }
 
     // loadMore = () => {
@@ -119,9 +100,7 @@ class GifList extends Component {
                     <button type="button" onClick={this.loadMore}>
                         See more
                     </button>
-                    <button type="button" onClick={() => this.mockingString("Orang Jahat Adalah Orang Baik yang Disakiti")}>
-                        Mock this string
-                    </button>
+                    
                 </div>
             </div>
             
