@@ -56,16 +56,21 @@ class GifList extends Component {
     }
 
     mockingString = (string) => {
+        let newString = ""
         for (let i = 0; i < string.length; i++) {
-            if (vowels.includes(string[i])) {
-                string[i] = "i"
+            if(!vowels.includes(string[i]) && !capitalVowels.includes(string[i])) {
+                newString = newString.concat(string[i]);
+
             }
 
+            if (vowels.includes(string[i])) {
+                newString = newString.concat("i");
+            }
             if(capitalVowels.includes(string[i])) {
-                string[i] = "I";
+                newString = newString.concat("I");
             }
         }
-        alert(string);
+        alert(newString);
     }
 
     // loadMore = () => {
@@ -111,8 +116,11 @@ class GifList extends Component {
                 
                 </div>
                 <div>
-                    <button type="button" onClick={() => this.mockingString("Orang Jahat Adalah Orang Baik yang Disakiti")}>
+                    <button type="button" onClick={this.loadMore}>
                         See more
+                    </button>
+                    <button type="button" onClick={() => this.mockingString("Orang Jahat Adalah Orang Baik yang Disakiti")}>
+                        Mock this string
                     </button>
                 </div>
             </div>
